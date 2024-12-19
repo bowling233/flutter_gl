@@ -1,13 +1,10 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:math';
-import 'dart:typed_data';
 
-import 'dart:ui' as ui;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter/widgets.dart';
 import 'package:flutter_gl/flutter_gl.dart';
 
 class ExampleTriangle01 extends StatefulWidget {
@@ -292,7 +289,7 @@ void main() {
     gl.enableVertexAttribArray(a_Position);
 
     // Return number of vertices
-    return (vertices.length / dim).toInt();
+    return vertices.length ~/ dim;
   }
 
   initShaders(gl, vs_source, fs_source) {
